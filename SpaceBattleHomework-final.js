@@ -53,41 +53,46 @@ function func2(){
                 alert(`Alien Spaceship ${i} has been destroyed, we won this round`)
                              
             } else{
-                alert(`We missed attacking the Alien spaceship ${i}! it is alienship turn to hit`);
+                alert(`We missed attacking the Alien spaceship ${i} ! it is alienship turn to hit`);
                 
             }               
         }
-        else{alert('please input the right firepower,this one is not right one-5!');
+        else{alert('please input the right firepower,this one is not right one "5"!');
         process.exit();
         }
 
         var alienRandomAttack1= prompt(`Alienship ${i} attack. To start the NO.1 attack USS HelloWorld, you must input 1`);
-        var alienRandomAttack = Math.floor(Math.random()*3+2);
-        
-        
+        var alienRandomAttack = Math.floor(Math.random()*3+2);            
    
-        if (alienRandomAttack1==='1' ) {  
-            var myShipHullValue = 20 - alienRandomAttack;        
-            alert(`Our spaceship has been hit and our ship hull is ${myShipHullValue}, it is our turn to attack!`);
-        }else if(alienRandomAttack){
-            myShipHullValue -= alienRandomAttack;        
-            alert(`Our spaceship has been hit and our ship hull is ${myShipHullValue}, it is our turn to attack!`);                              
-        }else if(alienRandomAttack1.search('6') =1){
-            process.exit();
-            
+        if (i==6){
+            break;
         }else{
-            myShipHullValue = myShipHullValue;
-            alert(`Alien spaceship missed hitting our spaceship, our ship hull is ${myShipHullValue}, and it our turn to attack!`)
+            if (alienRandomAttack1==='1' ) {  
+                var myShipHullValue = 20 - alienRandomAttack;        
+                alert(`Our spaceship has been hit and our ship hull is ${myShipHullValue}, it is our turn to attack!`);
+            }else if(alienRandomAttack){
+                myShipHullValue -= alienRandomAttack;        
+                alert(`Our spaceship has been hit and our ship hull is ${myShipHullValue}, it is our turn to attack!`);                              
+            }/* else if(alienRandomAttack1.search('5') == 1){
+                process.exit(); */
+                
+            else{
+                myShipHullValue = myShipHullValue;
+                alert(`Alien spaceship missed hitting our spaceship, our ship hull is ${myShipHullValue}, and it our turn to attack!`)
+    
+            }
 
         }
-    
+   
+            
     }
     if(myShipHullValue>0){
-        alert('WE WON THE Game!')
+        alert('CONGRATULATIONS, WE WON THE GAME!')
 
     }else{
         alert('We lost the Game')
     }
+
     
 }
 
